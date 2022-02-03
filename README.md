@@ -19,7 +19,7 @@ const myAddFunction = function add(num1, num2) {
 
 const result = myAddFunction(1, 2)
 console.log(result)
-}
+
 ```
 
 Use the browser console or REPL to explore these examples:
