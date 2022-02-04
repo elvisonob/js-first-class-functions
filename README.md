@@ -1,4 +1,5 @@
 # First Class Functions
+
 Most of the time when we've been working with functions we've been *calling* them:
 
 ```javascript
@@ -10,7 +11,15 @@ const result = add(1, 2)
 console.log(result)
 ```
 
-Something that makes functions extremely powerful in JavaScript is that we can also treat them just like any other value in the language - whenever we have an existing value, we can also have a function. What do you think this code logs out?
+Something that makes functions extremely powerful in JavaScript is that we can also treat them just like any other value in the language - whenever we have an existing value, we can also have a function. 
+
+## Learning Objectives
+- Explain what is meant by "first class functions" 
+- Demonstrate use of first-class functions through the Array `find`, `findIndex`, `map`, `filter` and `reduce` methods
+- Understand how arrow functions relate to standard functions
+
+## Passing Functions
+What do you think this code logs out?
 
 ```javascript
 const myAddFunction = function add(num1, num2) {
