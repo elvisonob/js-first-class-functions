@@ -64,7 +64,7 @@ function callAnotherFunction (func) {
 console.log(callAnotherFunction(add))
 ```
 
-The technical word for this feature is **first-class functions**
+The ability for us to use a function like any other variable means that we can say JavaScript supports **first-class functions**. Functions in JavaScript are a first-class type and are no different to other types like Number and string.
 
 Although the concept might seem a little weird right now, you will see just how useful it can be and how it’s pretty much everywhere you look in the JavaScript world.
 
@@ -168,3 +168,38 @@ MDN has excellent [documentation on arrow functions](https://developer.mozilla.o
 ## Exercise Part 2
 
 Inside the `arrays.js` file update your code to use the arrow function syntax.
+
+## A closing note on scoping
+An important thing to note when passing a function reference - at the point the function is defined, any variables visible to that function will remain accessible to the function when it is called. Consider this example:
+
+```javascript
+function getFunction() {
+ const someNumber = 10
+ return function() {
+   return someNumber
+ }
+}
+
+const f = getFunction()
+console.log(f())
+```
+
+When you run this code, what value do you expect to be logged? It's 10, because when the function is defined, it can "see" the `someNumber` variable. When the function is eventually executed, it still has access to that variable. The variables the function can "see" are defined when the function is declared.
+
+The combination of the function all the variables it can see is known as a [closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures).
+
+What do you think this one logs?
+
+```javascript
+function getFunction() {
+ const someNumber = 10
+ return function(someNumber) {
+   return someNumber
+ }
+}
+
+const f = getFunction()
+console.log(f(20))
+```
+
+It logs `20`. An important point to note is that when we try to access a variable from inside our function, the first variable found is used. In this second example, we are attempting to access `someNumber`, but we've defined a function parameter as `someNumber` so that value is used instead. The function argument `someNumber` is said to be *shadowing* the `const someNumber = 10`. 
