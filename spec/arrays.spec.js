@@ -30,7 +30,7 @@ describe("Arrays", () => {
         expect(f.startsWithM()).toEqual(['Matt', 'Marie', 'Mike'])
     })
 
-    it("horrorFilms", () => {
+    fit("horrorFilms", () => {
         expect(f.horrorFilms()).toEqual([{
                 name: 'The Manor',
                 genre: 'Horror'
@@ -42,7 +42,7 @@ describe("Arrays", () => {
         ])
     })
 
-    it("doubleEachNumber", () => {
+    fit("doubleEachNumber", () => {
         expect(f.doubleEachNumber()).toEqual([2, 20, 200, 2000])
     })
 

@@ -115,6 +115,13 @@ function horrorFilms() {
     ]
 
     //TODO: Use films.filter to return an array containing all horror films
+    return films.filter(function(film) {
+        if (film.genre === 'Horror') {
+            return true
+        } else {
+            return false
+        }
+    })
 }
 
 function doubleEachNumber() {
